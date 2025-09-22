@@ -9,14 +9,22 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
+    // MARK: - PROPERTIES
+    @Query private var destinations: [Destination]
+    
+    // MARK: - BODY
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(destinations) { destination in 
+                    VStack(alignment: .leading) {
+                        
+                    }
+                }
+            }
+            .navigationTitle("iTour")
         }
-        .padding()
     }
 }
 
