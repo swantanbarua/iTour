@@ -32,7 +32,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("iTour")
+            .toolbar {
+                Button {
+                    addDestination()
+                } label: {
+                    Text("Add Destination")
+                }
+            }
         }
+    }
+    
+    func addDestination() {
+        let rome = Destination(name: "Rome")
+        let florence = Destination(name: "Florence")
+        let naples = Destination(name: "Naples")
     }
 }
 

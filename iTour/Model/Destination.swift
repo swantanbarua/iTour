@@ -19,10 +19,10 @@ class Destination {
     
     // MARK: - INIT
     init(
-        name: String,
-        details: String,
-        date: Date,
-        priority: Int
+        name: String = "",
+        details: String = "",
+        date: Date = .now,
+        priority: Int = 1
     ) {
         self.name = name
         self.details = details
