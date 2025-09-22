@@ -17,9 +17,17 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(destinations) { destination in 
+                ForEach(destinations) { destination in
                     VStack(alignment: .leading) {
+                        Text(destination.name)
+                            .font(.headline)
                         
+                        Text(
+                            destination.date.formatted(
+                                date: .long,
+                                time: .shortened
+                            )
+                        )
                     }
                 }
             }
