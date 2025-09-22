@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     
     // MARK: - PROPERTIES
+    @Environment(\.modelContext) private var modelContext
     @Query private var destinations: [Destination]
     
     // MARK: - BODY
@@ -34,7 +35,7 @@ struct ContentView: View {
             .navigationTitle("iTour")
             .toolbar {
                 Button {
-                    addDestination()
+                    addDestination(name: "Madrid")
                 } label: {
                     Text("Add Destination")
                 }
@@ -42,10 +43,10 @@ struct ContentView: View {
         }
     }
     
-    func addDestination() {
-        let rome = Destination(name: "Rome")
-        let florence = Destination(name: "Florence")
-        let naples = Destination(name: "Naples")
+    func addDestination(name: String) {
+        let rome = Destination(name: name)
+        
+        modelContext.insert(rome)
     }
 }
 
